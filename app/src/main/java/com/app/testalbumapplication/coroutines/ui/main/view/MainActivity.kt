@@ -4,16 +4,13 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.testalbumapplication.coroutines.commons.NetworkUtils
 import com.app.testalbumapplication.coroutines.data.api.ApiHelperImpl
 import com.app.testalbumapplication.coroutines.data.api.RetrofitBuilder
 import com.app.testalbumapplication.coroutines.data.local.DatabaseBuilder
-import com.app.testalbumapplication.coroutines.data.local.DatabaseHelper
 import com.app.testalbumapplication.coroutines.data.local.DatabaseHelperImpl
 import com.app.testalbumapplication.coroutines.data.model.Albums
 import com.app.testalbumapplication.coroutines.ui.base.ViewModelFactory
@@ -21,7 +18,6 @@ import com.app.testalbumapplication.coroutines.ui.main.adapter.MainAdapter
 import com.app.testalbumapplication.coroutines.ui.main.viewmodel.MainViewModel
 import com.app.testalbumapplication.coroutines.utils.Status
 import com.app.testalbumapplication.databinding.ActivityMainBinding
-import kotlinx.coroutines.GlobalScope
 
 class MainActivity : AppCompatActivity() {
 
