@@ -1,4 +1,4 @@
-package com.app.testalbumapplication.coroutines.ui.main.view
+package com.app.testalbumapplication.samplemvvm.ui.main.view
 
 import android.os.Bundle
 import android.view.View
@@ -8,15 +8,15 @@ import androidx.lifecycle.ViewModelProvider
 
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.app.testalbumapplication.coroutines.data.api.ApiHelperImpl
-import com.app.testalbumapplication.coroutines.data.api.RetrofitBuilder
-import com.app.testalbumapplication.coroutines.data.local.DatabaseBuilder
-import com.app.testalbumapplication.coroutines.data.local.DatabaseHelperImpl
-import com.app.testalbumapplication.coroutines.data.model.Albums
-import com.app.testalbumapplication.coroutines.ui.base.ViewModelFactory
-import com.app.testalbumapplication.coroutines.ui.main.adapter.MainAdapter
-import com.app.testalbumapplication.coroutines.ui.main.viewmodel.MainViewModel
-import com.app.testalbumapplication.coroutines.utils.Status
+import com.app.testalbumapplication.samplemvvm.data.api.ApiHelperImpl
+import com.app.testalbumapplication.samplemvvm.data.api.RetrofitBuilder
+import com.app.testalbumapplication.samplemvvm.data.local.DatabaseBuilder
+import com.app.testalbumapplication.samplemvvm.data.local.DatabaseHelperImpl
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
+import com.app.testalbumapplication.samplemvvm.ui.base.ViewModelFactory
+import com.app.testalbumapplication.samplemvvm.ui.main.adapter.MainAdapter
+import com.app.testalbumapplication.samplemvvm.ui.main.viewmodel.MainViewModel
+import com.app.testalbumapplication.samplemvvm.utils.Status
 import com.app.testalbumapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {

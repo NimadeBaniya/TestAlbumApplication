@@ -1,4 +1,4 @@
-package com.app.testalbumapplication.coroutines.ui.main.viewmodel
+package com.app.testalbumapplication.samplemvvm.ui.main.viewmodel
 
 import android.content.Context
 import android.net.ConnectivityManager
@@ -8,10 +8,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.testalbumapplication.coroutines.data.api.ApiHelper
-import com.app.testalbumapplication.coroutines.data.local.DatabaseHelper
-import com.app.testalbumapplication.coroutines.data.model.Albums
-import com.app.testalbumapplication.coroutines.utils.Resource
+import com.app.testalbumapplication.samplemvvm.data.api.ApiHelper
+import com.app.testalbumapplication.samplemvvm.data.local.DatabaseHelper
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
+import com.app.testalbumapplication.samplemvvm.utils.Resource
 import kotlinx.coroutines.launch
 
 
@@ -59,7 +59,7 @@ class MainViewModel (private val apiHelper: ApiHelper, private val dbHelper: Dat
 
 
             } catch (e: Exception) {
-
+                //albums.postValue(Resource.error("Something Went Wrong", null))
             }
         }
     }

@@ -1,8 +1,8 @@
-package com.app.testalbumapplication.coroutines.utils
+package com.app.testalbumapplication.samplemvvm.utils
 
-import com.app.testalbumapplication.coroutines.utils.Status.ERROR
-import com.app.testalbumapplication.coroutines.utils.Status.LOADING
-import com.app.testalbumapplication.coroutines.utils.Status.SUCCESS
+import com.app.testalbumapplication.samplemvvm.utils.Status.ERROR
+import com.app.testalbumapplication.samplemvvm.utils.Status.LOADING
+import com.app.testalbumapplication.samplemvvm.utils.Status.SUCCESS
 
 
 data class Resource<out T>(val status: Status, val data: T?, val message: String?) {

@@ -1,6 +1,6 @@
-package com.app.testalbumapplication.coroutines.data.api
+package com.app.testalbumapplication.samplemvvm.data.api
 
-import com.app.testalbumapplication.coroutines.data.model.Albums
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
 
 class ApiHelperImpl(private val apiService: ApiService) : ApiHelper
 {

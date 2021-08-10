@@ -1,5 +1,5 @@
-package com.app.testalbumapplication.coroutines.data.local
-import com.app.testalbumapplication.coroutines.data.model.Albums
+package com.app.testalbumapplication.samplemvvm.data.local
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
 
 
 class DatabaseHelperImpl(private val appDatabase: AppDatabase) : DatabaseHelper {

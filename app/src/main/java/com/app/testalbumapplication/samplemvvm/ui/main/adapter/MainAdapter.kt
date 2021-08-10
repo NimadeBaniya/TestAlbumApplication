@@ -1,11 +1,11 @@
-package com.app.testalbumapplication.coroutines.ui.main.adapter
+package com.app.testalbumapplication.samplemvvm.ui.main.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 
-import com.app.testalbumapplication.coroutines.data.model.Albums
-import com.app.testalbumapplication.coroutines.ui.main.adapter.MainAdapter.DataViewHolder
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
+import com.app.testalbumapplication.samplemvvm.ui.main.adapter.MainAdapter.DataViewHolder
 import com.app.testalbumapplication.databinding.ItemLayoutBinding
 
 

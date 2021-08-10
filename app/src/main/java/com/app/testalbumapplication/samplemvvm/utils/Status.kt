@@ -1,4 +1,4 @@
-package com.app.testalbumapplication.coroutines.utils
+package com.app.testalbumapplication.samplemvvm.utils
 
 
 enum class Status {

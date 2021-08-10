@@ -1,4 +1,4 @@
-package com.app.testalbumapplication.coroutines.data.api
+package com.app.testalbumapplication.samplemvvm.data.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory

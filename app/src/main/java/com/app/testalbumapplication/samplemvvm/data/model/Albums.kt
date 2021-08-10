@@ -1,4 +1,4 @@
-package com.app.testalbumapplication.coroutines.data.model
+package com.app.testalbumapplication.samplemvvm.data.model
 
 import androidx.room.ColumnInfo
 import androidx.room.Entity

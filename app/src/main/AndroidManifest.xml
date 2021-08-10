@@ -13,7 +13,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TestAlbumApplication">
         <activity android:name=".HomeActivity"></activity>
-        <activity android:name=".coroutines.ui.main.view.MainActivity">
+        <activity android:name=".samplemvvm.ui.main.view.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

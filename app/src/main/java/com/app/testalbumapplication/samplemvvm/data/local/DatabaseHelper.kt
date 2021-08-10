@@ -1,7 +1,7 @@
-package com.app.testalbumapplication.coroutines.data.local
+package com.app.testalbumapplication.samplemvvm.data.local
 
 
-import com.app.testalbumapplication.coroutines.data.model.Albums
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
 
 interface DatabaseHelper {
 

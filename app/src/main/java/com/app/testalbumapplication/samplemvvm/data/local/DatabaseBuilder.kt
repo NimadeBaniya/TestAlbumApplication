@@ -1,9 +1,8 @@
-package com.app.testalbumapplication.coroutines.data.local
+package com.app.testalbumapplication.samplemvvm.data.local
 
 
 import android.content.Context
 import androidx.room.Room
-import com.app.testalbumapplication.coroutines.data.local.AppDatabase
 
 object DatabaseBuilder {
 

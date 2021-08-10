@@ -1,9 +1,9 @@
-package com.app.testalbumapplication.coroutines.data.local.dao
+package com.app.testalbumapplication.samplemvvm.data.local.dao
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import com.app.testalbumapplication.coroutines.data.model.Albums
+import com.app.testalbumapplication.samplemvvm.data.model.Albums
 
 @Dao
 interface AlbumDao
