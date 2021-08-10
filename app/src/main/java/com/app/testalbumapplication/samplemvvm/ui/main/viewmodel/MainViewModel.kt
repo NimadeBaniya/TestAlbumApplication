@@ -59,7 +59,7 @@ class MainViewModel (private val apiHelper: ApiHelper, private val dbHelper: Dat
 
 
             } catch (e: Exception) {
-                //albums.postValue(Resource.error("Something Went Wrong", null))
+//                albums.postValue(Resource.error("Something Went Wrong", ""))
             }
         }
     }
@@ -88,5 +88,10 @@ class MainViewModel (private val apiHelper: ApiHelper, private val dbHelper: Dat
             }
         }
         return false
+    }
+
+
+    override fun onCleared() {
+        super.onCleared()
     }
 }
