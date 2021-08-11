@@ -1,14 +1,14 @@
 package com.app.testalbumapplication.samplemvvm.ui.main.view
 
+import ConnectionLiveData
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
-
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.app.testalbumapplication.databinding.ActivityMainBinding
 import com.app.testalbumapplication.samplemvvm.data.api.ApiHelperImpl
 import com.app.testalbumapplication.samplemvvm.data.api.RetrofitBuilder
 import com.app.testalbumapplication.samplemvvm.data.local.DatabaseBuilder
@@ -18,7 +18,6 @@ import com.app.testalbumapplication.samplemvvm.ui.base.ViewModelFactory
 import com.app.testalbumapplication.samplemvvm.ui.main.adapter.MainAdapter
 import com.app.testalbumapplication.samplemvvm.ui.main.viewmodel.MainViewModel
 import com.app.testalbumapplication.samplemvvm.utils.Status
-import com.app.testalbumapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -37,11 +36,11 @@ class MainActivity : AppCompatActivity() {
 
 
 
-    fun onNetworkChange()
+   private fun onNetworkChange()
     {
         ConnectionLiveData.isAvailableLiveData.postValue(ConnectionLiveData.isOnline(this))
         ConnectionLiveData.getNetworkStatus(this)
-            .observe(this, Observer { isConnected ->
+            .observe(this, { isConnected ->
 
                 if(isConnected)
                 {
