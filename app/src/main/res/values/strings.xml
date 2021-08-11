@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">TestAlbumApplication</string>
+    <string name="msg_connectivity">No Internet Connection</string>
 </resources>

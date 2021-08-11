@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 
 import androidx.recyclerview.widget.DividerItemDecoration
@@ -27,13 +28,38 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityMainBinding.inflate(layoutInflater)
-
         setContentView(binding.root)
         setupViewModel()
         setupUI()
         setupObserver()
-
+        onNetworkChange()
     }
+
+
+
+    fun onNetworkChange()
+    {
+        ConnectionLiveData.isAvailableLiveData.postValue(ConnectionLiveData.isOnline(this))
+        ConnectionLiveData.getNetworkStatus(this)
+            .observe(this, Observer { isConnected ->
+
+                if(isConnected)
+                {
+                    binding.textConnectivity.visibility=View.GONE
+
+                }
+                else
+                {
+                    binding.textConnectivity.visibility=View.VISIBLE
+
+                }
+                viewModel.fetchAlbumsData()
+
+            })
+    }
+
+
+
 
 
     private fun setupViewModel() {

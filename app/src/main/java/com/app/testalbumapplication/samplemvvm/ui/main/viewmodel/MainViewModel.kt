@@ -18,14 +18,10 @@ import kotlinx.coroutines.launch
 class MainViewModel (private val apiHelper: ApiHelper, private val dbHelper: DatabaseHelper)  : ViewModel() {
 
     private val albums = MutableLiveData<Resource<List<Albums>>>()
-    private var isInternet:Boolean = false
 
-    init {
 
-        fetchAlbumsData()
-    }
 
-    private fun fetchAlbumsData() {
+     fun fetchAlbumsData() {
         viewModelScope.launch {
             albums.postValue(Resource.loading(null))
             try {
@@ -35,21 +31,21 @@ class MainViewModel (private val apiHelper: ApiHelper, private val dbHelper: Dat
                 if (albumsFromDb.isEmpty())
                 {
 
-                    val albumsFromApi = apiHelper.getAlbums()
-                    val albumsToInsertInDB = mutableListOf<Albums>()
+                        val albumsFromApi = apiHelper.getAlbums()
+                        val albumsToInsertInDB = mutableListOf<Albums>()
 
-                    for (apiAlbum in albumsFromApi) {
-                        val user = Albums(
-                            apiAlbum.id,
-                            apiAlbum.userId,
-                            apiAlbum.title,
+                        for (apiAlbum in albumsFromApi) {
+                            val user = Albums(
+                                apiAlbum.id,
+                                apiAlbum.userId,
+                                apiAlbum.title,
 
-                        )
-                        albumsToInsertInDB.add(user)
-                    }
+                                )
+                            albumsToInsertInDB.add(user)
+                        }
 
-                    dbHelper.insertAllDB(albumsToInsertInDB)
-                    albums.postValue(Resource.success(albumsToInsertInDB))
+                        dbHelper.insertAllDB(albumsToInsertInDB)
+                        albums.postValue(Resource.success(albumsToInsertInDB))
 
                 }
                 else
@@ -64,34 +60,10 @@ class MainViewModel (private val apiHelper: ApiHelper, private val dbHelper: Dat
         }
     }
 
+
     fun getAlbums(): LiveData<Resource<List<Albums>>> {
         return albums
     }
 
-    fun isOnline(context: Context): Boolean {
-        val connectivityManager =
-            context.getSystemService(Context.CONNECTIVITY_SERVICE) as ConnectivityManager
-        if (connectivityManager != null) {
-            val capabilities =
-                connectivityManager.getNetworkCapabilities(connectivityManager.activeNetwork)
-            if (capabilities != null) {
-                if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_CELLULAR)) {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_CELLULAR")
-                    return true
-                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_WIFI)) {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_WIFI")
-                    return true
-                } else if (capabilities.hasTransport(NetworkCapabilities.TRANSPORT_ETHERNET)) {
-                    Log.i("Internet", "NetworkCapabilities.TRANSPORT_ETHERNET")
-                    return true
-                }
-            }
-        }
-        return false
-    }
-
-
-    override fun onCleared() {
-        super.onCleared()
-    }
+    
 }
